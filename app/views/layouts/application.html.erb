@@ -24,14 +24,20 @@
       </div>
     <% end %>
 
+
     <%= link_to root_path, class: "navbar-item" do %>
       <h1 class="title is-4" style="font-family: cursive;">recipegram</h1>
     <% end %>
 
-    <%= link_to "Logout", destroy_user_session_path, data: { 'turbo-method': :delete}, class: "button is-warning is-light" %>
-    <%= link_to "Login", new_user_session_path, class: "button is-warning is-light" %>
-    <%= link_to "Sign Up", new_user_registration_path, class: "button is-warning is-light" %>
 
+    <% if user_signed_in? %>
+      <%= link_to "Logout", destroy_user_session_path, data: { 'turbo-method': :delete}, class: "button is-warning is-light" %>
+
+    <% else %>
+      <%= link_to "Login", new_user_session_path, class: "button is-warning is-light" %>
+      <%= link_to "Sign Up", new_user_registration_path, class: "button is-warning is-light" %>
+
+    <% end %>
     <%= yield %>
   </body>
 </html>
