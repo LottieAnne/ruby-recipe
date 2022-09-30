@@ -51,5 +51,8 @@
 
 <% @user.recipes.each do |recipe| %>
   <%= attachment_image_tag recipe, :image %>
+  <%= link_to "Detail", recipe_path(recipe) %>
+  <%= link_to "Edit", edit_recipe_path(recipe) %>
+  <%= link_to "Delete", recipe_path(recipe), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 <% end %> 
 
