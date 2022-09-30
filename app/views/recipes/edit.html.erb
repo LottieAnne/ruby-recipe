@@ -1,2 +1,36 @@
-<h1>Recipes#edit</h1>
-<p>Find me in app/views/recipes/edit.html.erb</p>
+<section class="hero is-success">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Edit Recipe
+      </h1>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <%= form_for @recipe do |f| %>
+          <div class="field">
+            <%= f.label :title, "Recipe", class: "label" %>
+            <%= f.text_field :title, class: "input" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :body, "How to cook", class: "label" %>
+            <%= f.text_area :body, class: "textarea" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :image, "Image", class: "label" %>
+            <%= f.attachment_field :image, class: "input" %>
+          </div>
+
+          <%= f.submit 'Update', class: "button is-success" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
