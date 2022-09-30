@@ -16,10 +16,14 @@
 
 @import "bulma";
 
-.notification:not(:last-child){
+.notification:not(:last-child) {
 	margin-bottom: 0;
 }
 
-.profile_image {
-	border-radius: 30px;
+.card-image:first-child img, .card-image:last-child img {
+	border-radius: 50%;
+}
+
+.input {
+	height: auto;
 }
