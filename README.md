@@ -1,1 +1,1 @@
-# ruby-recipi
+# ruby-recipe
