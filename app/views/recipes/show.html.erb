@@ -40,10 +40,24 @@
           </div>
         </div>
       </div>
+      <div class="column is-4">
+        <article class="panel is-link">
+          <p class="panel-heading">
+            By <%= @recipe.user.username %>
+          </p>
+          <div class="panel-block">
+            <p class="control">
+              <%= @recipe.user.profile %>
+            </p>
+          </div>
+          <%= link_to user_path(@recipe.user), class: "panel-block" do %>
+            <span class="panel-icon">
+              <i class="fas fa-user" aria-hidden="true"></i>
+            </span>
+            Move to <%= @recipe.user.username %>'s Page
+          <% end %>
+        </article>
+      </div>
     </div>
   </div>
 </section>
-
-<%= link_to user_path(@recipe.user) do %>
-  Move to <%= @recipe.user.username %>'s Page
-<% end %>
