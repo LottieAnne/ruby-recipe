@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  
+
   def index
     @recipes = Recipe.all
   end
@@ -22,6 +22,10 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
+    if @recipe.user != current_user
+      redirect_to recipes_path, alert: "Unauthorized access"
+      
+    end
   end
 
   def update
