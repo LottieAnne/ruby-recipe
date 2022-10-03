@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to user_path(@user), notice: "Success!"
+      redirect_to user_path(@user), notice: "Update successfully!"
     else
       render :edit, status: :unprocessable_entity
     end
