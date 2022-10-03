@@ -1,1 +1,3 @@
 # ruby-recipe
+
+recipe app
